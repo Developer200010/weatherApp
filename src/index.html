@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather App</title>
+  <link rel="stylesheet" href="output.css">
+</head>
+<body class="bg-gray-800 min-h-screen flex flex-col items-center p-4">
+  <h1 class="text-2xl font-bold mb-4">Weather Forecast App</h1>
+  <div class="flex gap-2 mb-4">
+    <input id="cityInput" type="text" placeholder="Enter city" class="border-2 border-amber-300 rounded p-2 text-white">
+    <button id="searchBtn" class="bg-blue-500 text-white p-2 rounded">Search</button>
+    <button id="currentBtn" class="bg-green-500 text-white p-2 rounded">Current Location</button>
+  </div>
+  <div>
+    <select id="recentDropdown" class="border p-2 rounded hidden"></select>
+  </div>
+  <div id="weatherDisplay" class="mt-4"></div>
+  <div id="forecastDisplay" class="mt-4 grid grid-cols-1 md:grid-cols-5 gap-2"></div>
+  <script src="script.js"></script>
+</body>
+</html>
