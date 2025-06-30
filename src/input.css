@@ -1,1 +1,18 @@
 @import "tailwindcss";
+
+@layer utilities{
+      .cardAnimate {
+    animation: slide-down 1s ease-out 0.5s 1 running;
+  }
+
+  @keyframes slide-down {
+    from {
+      transform: translateY(-40px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}
