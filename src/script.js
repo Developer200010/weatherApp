@@ -15,7 +15,7 @@ document.getElementById("searchBtn").addEventListener("click", ()=>{
 document.getElementById('currentBtn').addEventListener('click', () => {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(pos => {
-      fetchWeatherByCoords(pos.coords.latitude, pos.coords.longitude);
+      fetchWeatherByCoord(pos.coords.latitude, pos.coords.longitude);
     }, () => {
       alert('Unable to retrieve your location');
     });
@@ -53,7 +53,7 @@ function fetchWeatherByCity(city){
 }
 
 //fetching weather data according to coordinates
-function fetchWeatherByCoords(lat, lon) {
+function fetchWeatherByCoord(lat, lon) {
   fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`)
     .then(res => res.json())
     .then(data => {
