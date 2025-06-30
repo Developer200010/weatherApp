@@ -35,8 +35,8 @@ function fetchWeatherByCity(city){
   if(cachedData){
     const data = JSON.parse(cachedData);
     displayCurrentWeather(data);
-    fetchForecastIfNeeded(city);
-    fetchForecast(city);
+    fetchForeCastIfNeeded(city);
+    fetchForeCast(city);
     return;
   }
 
@@ -48,7 +48,7 @@ function fetchWeatherByCity(city){
     }).then(data =>{
         displayCurrentWeather(data);
         saveRecentSearch(city);
-        fetchForecast(city);
+        fetchForeCast(city);
     }).catch(err => alert(err.message));
 }
 
@@ -79,13 +79,13 @@ function fetchWeatherByCoords(lat, lon) {
       updateDropdown(searches);
 
       // 4️⃣ Optionally, fetch extended forecast
-      fetchForecast(city);
+      fetchForeCast(city);
     })
     .catch(err => alert('Error fetching location weather'));
 }
 
 
-function fetchForecast(city) {
+function fetchForeCast(city) {
     const cacheKey = `forecast_${city.toLowerCase()}`;
   const cachedData = localStorage.getItem(cacheKey);
 
@@ -101,9 +101,9 @@ function fetchForecast(city) {
     .catch(err => console.error('Forecast fetch error:', err));
 }
 
-function fetchForecastIfNeeded(city) {
+function fetchForeCastIfNeeded(city) {
   // This ensures forecast always updates even when weather is cached
-  fetchForecast(city);
+  fetchForeCast(city);
 }
 
 
