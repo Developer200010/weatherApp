@@ -18,7 +18,4 @@
 - JavaScript (Vanilla)
 - OpenWeatherMap API
 
-## Future Enhancements
-- Add weather icons dynamically
-- Improve error messages
-- Polish UI further
+
