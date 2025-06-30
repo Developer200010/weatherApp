@@ -34,7 +34,7 @@ function fetchWeatherByCity(city){
 
   if(cachedData){
     const data = JSON.parse(cachedData);
-    displayCurrentWeather(data);
+    displayCurrentWeathers(data);
     fetchForeCastIfNeeded(city);
     fetchForeCast(city);
     return;
@@ -46,7 +46,7 @@ function fetchWeatherByCity(city){
         if(!res.ok) throw new Error("city not found");
         return res.json();
     }).then(data =>{
-        displayCurrentWeather(data);
+        displayCurrentWeathers(data);
         saveRecentSearch(city);
         fetchForeCast(city);
     }).catch(err => alert(err.message));
@@ -57,7 +57,7 @@ function fetchWeatherByCoords(lat, lon) {
   fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`)
     .then(res => res.json())
     .then(data => {
-      displayCurrentWeather(data);
+      displayCurrentWeathers(data);
       
       const city = data.name;
 
@@ -107,7 +107,7 @@ function fetchForeCastIfNeeded(city) {
 }
 
 
-function displayCurrentWeather(data) {
+function displayCurrentWeathers(data) {
   document.getElementById('weatherDisplay').innerHTML = `
   <div class="bg-white bg-opacity-20 backdrop-blur rounded-xl shadow-2xl p-6 border border-white border-opacity-30 transform transition hover:scale-105">
     <h2 class="text-2xl font-bold mb-2">${data.name}</h2>
