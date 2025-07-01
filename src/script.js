@@ -11,7 +11,6 @@ document.getElementById("searchBtn").addEventListener("click", () => {
   const city = document.getElementById("cityInput").value.trim();
   if (city) {
     showLoading();
-    forecastEWText.textContent = "forecasted weather"
     fetchWeatherByCity(city);
 
   } else {
@@ -50,7 +49,11 @@ function fetchWeatherByCity(city) {
       saveRecentSearch(city);
       fetchForeCast(city);
     })
-    .catch(err => alert(err.message));
+    .catch(err => {
+  weatherDisplay.innerHTML = `<div class="text-center text-lg font-semibold text-red-500">❌ Data not found</div>`;
+  forecastDisplay.innerHTML = "";
+  forecastEWText.textContent = "";
+});
 }
 
 function fetchWeatherByCoord(lat, lon) {
@@ -74,12 +77,14 @@ function fetchWeatherByCoord(lat, lon) {
 
       fetchForeCast(city);
     })
-    .catch(err => alert('Error fetching location weather'));
+    .catch(err => {
+        weatherDisplay.innerHTML = `<div class="text-center text-lg font-semibold text-red-500">❌ Data not found</div>`;
+  forecastDisplay.innerHTML = "";
+  forecastEWText.textContent = "";
+    });
 }
 
 function fetchForeCast(city) {
-  const line = document.getElementById("line");
-  line.classList.add("line")
   fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}&units=metric`)
     .then(res => res.json())
     .then(data => displayForecast(data))
@@ -103,7 +108,9 @@ function displayCurrentWeathers(data) {
 
 
 function displayForecast(data) {
-  console.log(data, " inside of displayForecast")
+  const line = document.getElementById("line");
+  line.classList.add("line")
+  forecastEWText.textContent = "forecasted weather"
   forecastDisplay.innerHTML = '';
   const daily = data.list.filter(item => item.dt_txt.includes('12:00:00'));
   daily.forEach(day => {
