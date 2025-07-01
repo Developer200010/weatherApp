@@ -1,21 +1,19 @@
-# 🌦 WeatherNow — A Sleek Weather Forecast App
+#  WeathrX — A Sleek Weather Forecast App
 
 WeatherNow is a responsive weather app built using **vanilla JavaScript** and **Tailwind CSS**, with support for **dark/light mode**, **location detection**, and **forecasting with animations**. It fetches real-time weather data using the **OpenWeatherMap API**.
 
 ---
 
 ## 🖼️ Screenshots
-
-<!-- ### ☀️ Light Mode
-
-![Light Mode Screenshot](./screenshorts/w_light.png)
-
-### 🌙 Dark Mode
-
-![Dark Mode Screenshot](./screenshorts/w_dark.png) -->
+### Light Mode vs Dar Mode
 <p align="center">
   <img src="./screenshots/w_light.png" alt="Light Mode" width="45%" style="margin-right:10px;">
-  <img src="./screenshots/w_dark.png" alt="Dark Mode" width="45%">
+  <img src="./screenshots/w_light_data.png" alt="Dark Mode" width="45%">
+</p>
+
+<p align="center">
+  <img src="./screenshots/w_dark.png" alt="Light Mode" width="45%" style="margin-right:10px;">
+  <img src="./screenshots/w_dark_data.png" alt="Dark Mode" width="45%">
 </p>
 
 
@@ -48,8 +46,7 @@ WeatherNow is a responsive weather app built using **vanilla JavaScript** and **
 ---
 
 ## ⚙️ Folder Structure
-
-```bash
+---
 weather-app/
 ├── index.html
 ├── script.js
@@ -59,5 +56,5 @@ weather-app/
 │   ├── light-mode.png
 │   └── dark-mode.png
 └── README.md
-
+---
 
