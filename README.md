@@ -6,13 +6,18 @@ WeatherNow is a responsive weather app built using **vanilla JavaScript** and **
 
 ## 🖼️ Screenshots
 
-### ☀️ Light Mode
+<!-- ### ☀️ Light Mode
 
 ![Light Mode Screenshot](./screenshorts/w_light.png)
 
 ### 🌙 Dark Mode
 
-![Dark Mode Screenshot](./screenshorts/w_dark.png)
+![Dark Mode Screenshot](./screenshorts/w_dark.png) -->
+<p align="center">
+  <img src="./screenshots/w_light.png" alt="Light Mode" width="45%" style="margin-right:10px;">
+  <img src="./screenshots/w_dark.png" alt="Dark Mode" width="45%">
+</p>
+
 
 > 💡 You can toggle the theme using the button on the top right of the header.
 
