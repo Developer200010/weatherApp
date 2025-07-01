@@ -4,41 +4,64 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>🌤 Weather Forecast App</title>
+  <title>WeathrX</title>
   <link rel="stylesheet" href="output.css">
+ <link rel="icon" type="image/icon" href="logo.svg">
   <script src="script.js" defer></script>
 </head>
 
 <body
-  class="bg-gradient-to-r from-blue-100 via-blue-50 to-blue-100 min-h-screen p-4 flex flex-col items-center font-sans">
+  class="min-h-screen p-4 flex flex-col items-center light-mode">
 
-  <header class="text-center mb-8">
-    <h1 class="text-4xl font-extrabold text-blue-700 mb-2">WeatherNow 🌦</h1>
-    <p class="text-gray-600">Your sleek and smart weather companion</p>
+  <header class="text-center mb-8 w-full flex items-center justify-between">
+    <h1 class="md:text-2xl text-lg font-extrabold text-blue-700 mb-2 flex gap-0.5"><img src="logo.svg" width="20" height="20" alt="logo">WeathrX</h1>
+    <button id="themeToggle"
+  class="font-bold md:py-2 md:px-4 p-2 rounded-full shadow-lg transition duration-300 hover:cursor-pointer">
+  🌙
+</button>
+
   </header>
 
-  <section class="bg-white rounded-2xl shadow-2xl p-6 w-full max-w-lg flex flex-col gap-4">
-    <div class="flex flex-wrap gap-2 w-full">
-      <input id="cityInput" type="text" placeholder="Search city..."
-        class="flex-1 min-w-[150px] p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 transition">
-      <button id="searchBtn"
-        class="bg-blue-500 text-white rounded-lg px-4 py-2 hover:bg-blue-600 transition w-full sm:w-auto">
-        Search
-      </button>
-      <button id="currentBtn"
-        class="bg-green-500 text-white rounded-lg px-4 py-2 hover:bg-green-600 transition w-full sm:w-auto">
-        📍
-      </button>
-    </div>
+  <section id="searchSection" class="rounded-2xl shadow-2xl p-6 w-full max-w-lg flex flex-col gap-4 transition duration-500 flex-wrap">
+  <div class="flex flex-wrap gap-2 w-full">
+    <input 
+      id="cityInput"
+      type="text"
+      placeholder="Search city..."
+      class="flex -1 w-full sm:w-[250px] p-3 rounded-lg focus:outline-none transition duration-300"
+    >
+    <button 
+      id="searchBtn"
+      class="rounded-lg px-4 py-2 w-full sm:w-[110px] font-semibold shadow-md transition transform duration-300"
+    >
+      Search
+    </button>
+    <button 
+      id="currentBtn"
+      class="rounded-lg px-4 py-2 w-full sm:w-[80px] font-semibold shadow-md transition transform duration-300"
+    >
+      <i class="fa-solid fa-location-crosshairs"></i>
+    </button>
+  </div>
 
-    <select id="recentDropdown" class="w-full sm:w-auto border p-2 rounded-lg hidden transition duration-300"></select>
-  </section>
+  <select 
+    id="recentDropdown"
+    class="w-full sm:w-auto border p-2 rounded-lg hidden transition duration-300"
+  ></select>
+</section>
 
-  <section id="weatherDisplay" class="mt-8 w-full max-w-lg"></section>
+<!-- section for showing current weather of the city -->
+<section id="weatherDisplay" class="mt-8 w-full max-w-lg text-center p-4 rounded-lg shadow">
+</section>
 
-  <section id="forecastDisplay" class="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4 w-full max-w-5xl">
-  </section>
+<hr class="" id="line">
 
+<!-- section for showing forecasting data of the city -->
+ <h3 class="h3-title" id="forecasted-weather-text"></h3>
+<section id="forecastDisplay" class="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4 w-full max-w-5xl">
+</section>
+
+<script src="https://kit.fontawesome.com/1c71152e45.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
