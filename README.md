@@ -46,7 +46,7 @@ WeathrX is a responsive weather app built using **vanilla JavaScript** and **Tai
 ---
 
 ## ⚙️ Folder Structure
----
+```bash
 weather-app/
 ├── index.html
 ├── script.js
@@ -56,5 +56,4 @@ weather-app/
 │   ├── light-mode.png
 │   └── dark-mode.png
 └── README.md
----
 
